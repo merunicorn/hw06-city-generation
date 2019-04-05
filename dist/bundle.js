@@ -122,19 +122,6 @@ function equals(a, b) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return gl; });
-/* harmony export (immutable) */ __webpack_exports__["b"] = setGL;
-var gl;
-function setGL(_gl) {
-    gl = _gl;
-}
-
-
-/***/ }),
-/* 2 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__gl_matrix_common_js__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__gl_matrix_mat2_js__ = __webpack_require__(22);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__gl_matrix_mat2d_js__ = __webpack_require__(23);
@@ -166,6 +153,19 @@ function setGL(_gl) {
 
 
 
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return gl; });
+/* harmony export (immutable) */ __webpack_exports__["b"] = setGL;
+var gl;
+function setGL(_gl) {
+    gl = _gl;
+}
 
 
 /***/ }),
@@ -5214,7 +5214,7 @@ var forEach = function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__globals__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__globals__ = __webpack_require__(2);
 
 class Drawable {
     constructor() {
@@ -6018,7 +6018,7 @@ function determinant(a) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stats_js__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_stats_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_stats_js__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_dat_gui__ = __webpack_require__(27);
@@ -6027,7 +6027,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__geometry_Plane__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__rendering_gl_OpenGLRenderer__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__Camera__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__globals__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__globals__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__city__ = __webpack_require__(69);
 
@@ -6146,16 +6146,16 @@ function main() {
     renderer.setClearColor(164.0 / 255.0, 233.0 / 255.0, 1.0, 1);
     gl.enable(gl.DEPTH_TEST);
     const lambert = new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["b" /* default */]([
-        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.VERTEX_SHADER, __webpack_require__(70)),
-        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.FRAGMENT_SHADER, __webpack_require__(71)),
+        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.VERTEX_SHADER, __webpack_require__(71)),
+        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.FRAGMENT_SHADER, __webpack_require__(72)),
     ]);
     const flat = new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["b" /* default */]([
-        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.VERTEX_SHADER, __webpack_require__(72)),
-        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.FRAGMENT_SHADER, __webpack_require__(73)),
+        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.VERTEX_SHADER, __webpack_require__(73)),
+        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.FRAGMENT_SHADER, __webpack_require__(74)),
     ]);
     const instanced = new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["b" /* default */]([
-        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.VERTEX_SHADER, __webpack_require__(74)),
-        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.FRAGMENT_SHADER, __webpack_require__(75)),
+        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.VERTEX_SHADER, __webpack_require__(75)),
+        new __WEBPACK_IMPORTED_MODULE_8__rendering_gl_ShaderProgram__["a" /* Shader */](gl.FRAGMENT_SHADER, __webpack_require__(76)),
     ]);
     function processKeyPresses() {
         let velocity = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(0, 0);
@@ -13222,7 +13222,7 @@ dat.utils.common);
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__rendering_gl_Drawable__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globals__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globals__ = __webpack_require__(2);
 
 
 class Square extends __WEBPACK_IMPORTED_MODULE_0__rendering_gl_Drawable__["a" /* default */] {
@@ -13277,9 +13277,9 @@ class Square extends __WEBPACK_IMPORTED_MODULE_0__rendering_gl_Drawable__["a" /*
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__rendering_gl_Drawable__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globals__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__globals__ = __webpack_require__(2);
 
 
 
@@ -13368,8 +13368,8 @@ class Plane extends __WEBPACK_IMPORTED_MODULE_1__rendering_gl_Drawable__["a" /* 
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globals__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globals__ = __webpack_require__(2);
 
 
 // In this file, `gl` is accessible because it is imported above
@@ -13451,7 +13451,7 @@ class OpenGLRenderer {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
 var CameraControls = __webpack_require__(34);
 
 class Camera {
@@ -16558,8 +16558,8 @@ module.exports = true;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globals__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__globals__ = __webpack_require__(2);
 
 
 var activeProgram = null;
@@ -16784,12 +16784,17 @@ class ShaderProgram {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__noisefxns__ = __webpack_require__(70);
+
+
 class City {
     constructor(w, h) {
         this.width = w;
         this.height = h;
         this.grid = [];
         this.initGrid();
+        this.waterCheck();
         this.scatterPoints();
     }
     initGrid() {
@@ -16807,6 +16812,25 @@ class City {
             }
         }
     }
+    waterCheck() {
+        for (var i = 0; i < this.width; i++) {
+            for (var j = 0; j < this.width; j++) {
+                let p = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(i, j);
+                let st = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(p[0] + 1.0 / 2.0, p[1] + 1.0 / 2.0);
+                let nf = new __WEBPACK_IMPORTED_MODULE_1__noisefxns__["a" /* default */](p);
+                let fbmn = nf.fbm(st)[0];
+                let worley = nf.WorleyNoise(p);
+                let worley2 = nf.WorleyNoise(__WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(p[1], p[0]));
+                worley2 /= fbmn * 2.8;
+                worley2 += worley / 5.0;
+                worley2 = 1.0 - worley2;
+                worley2 = Math.min(Math.max(worley2, 0.0), 1.0);
+                if (worley2 < 0.3) {
+                    this.grid[i][j] = 4;
+                }
+            }
+        }
+    }
     scatterPoints() {
         var numPoints = 50;
         for (var i = 0; i < numPoints; i++) {
@@ -16816,8 +16840,10 @@ class City {
             random1 *= this.height;
             random0 = Math.floor(random0);
             random1 = Math.floor(random1);
-            if (random0 % 10 == 0 || random1 % 10 == 0) {
+            if (random0 % 10 == 0 || random1 % 10 == 0 ||
+                this.grid[random0][random1] == 4) {
                 // over road; generate new point
+                // or on water
                 i--;
             }
             else {
@@ -16864,6 +16890,13 @@ class City {
                         colArray.push(1);
                         colArray.push(1);
                     }
+                    else if (this.grid[i][j] == 4) {
+                        // water
+                        colArray.push(0);
+                        colArray.push(0);
+                        colArray.push(0);
+                        colArray.push(1);
+                    }
                     else {
                         colArray.push(0);
                         colArray.push(0);
@@ -16892,36 +16925,134 @@ class City {
 
 /***/ }),
 /* 70 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-module.exports = "#version 300 es\n\n\nuniform mat4 u_Model;\nuniform mat4 u_ModelInvTr;\nuniform mat4 u_ViewProj;\nuniform vec2 u_PlanePos; // Our location in the virtual world displayed by the plane\nuniform int u_Time;\nuniform int u_Anim;\n\nin vec4 vs_Pos;\nin vec4 vs_Nor;\nin vec4 vs_Col;\n\nin vec4 vs_Transf1;\nin vec4 vs_Transf2;\nin vec4 vs_Transf3;\nin vec4 vs_Transf4;\n\nout vec3 fs_Pos;\nout vec4 fs_Nor;\nout vec4 fs_Col;\n\nout float fs_Time;\nout float fs_Water;\n\nfloat random1( vec2 p , vec2 seed) {\n  return fract(sin(dot(p + seed, vec2(127.1, 311.7))) * 43758.5453);\n}\n\nfloat random1( vec3 p , vec3 seed) {\n  return fract(sin(dot(p + seed, vec3(987.654, 123.456, 531.975))) * 85734.3545);\n}\n\nvec2 random2( vec2 p , vec2 seed) {\n  return fract(sin(vec2(dot(p + seed, vec2(311.7, 127.1)), dot(p + seed, vec2(269.5, 183.3)))) * 85734.3545);\n}\n\n//Smoothstep (Adam's code)\nvec2 mySmoothStep(vec2 a, vec2 b, float t) {\n    t = smoothstep(0.0, 1.0, t);\n    return mix(a, b, t);\n}\n\n//2d Noise (Adam's code)\nvec2 interpNoise2D(vec2 uv) {\n    vec2 uvFract = fract(uv);\n    vec2 ll = random2(floor(uv), vec2(10.0)); //need to input seeds\n    vec2 lr = random2(floor(uv) + vec2(1,0), vec2(10.0));\n    vec2 ul = random2(floor(uv) + vec2(0,1), vec2(10.0));\n    vec2 ur = random2(floor(uv) + vec2(1,1), vec2(10.0));\n\n    vec2 lerpXL = mySmoothStep(ll, lr, uvFract.x);\n    vec2 lerpXU = mySmoothStep(ul, ur, uvFract.x);\n\n    return mySmoothStep(lerpXL, lerpXU, uvFract.y);\n}\n\n//FBM (Adam's base code)\nvec2 fbm(vec2 uv) {\n    float amp = 20.0;\n    float freq = 1.0;\n    vec2 sum = vec2(0.0);\n    float maxSum = 0.0;\n    int octaves = 10; //can modify\n    for(int i = 0; i < octaves; i++) {\n        sum += interpNoise2D(uv * freq) * amp;\n        maxSum += amp;\n        amp *= 0.5;\n        freq *= 2.0;\n    }\n    return sum / maxSum;\n}\n\n//Worley Noise (Adam's code)\nfloat WorleyNoise(vec2 uv, int j)\n{\n    // Tile the space\n    vec2 uvInt = floor(uv);\n    vec2 uvFract = fract(uv);\n\n    float minDist = 1.0; // Minimum distance initialized to max.\n\n    // Search all neighboring cells and this cell for their point\n    for(int y = -1; y <= 1; y++) {\n        for(int x = -1; x <= 1; x++) {\n            vec2 neighbor = vec2(float(x), float(y));\n\n            // Random point inside current neighboring cell\n            vec2 point = random2(uvInt + neighbor, vec2(10.0));\n\n            // Compute the distance b/t the point and the fragment\n            // Store the min dist thus far\n            vec2 diff = neighbor + point - uvFract;\n            float dist = length(diff);\n            minDist = min(minDist, dist);\n        }\n    }\n    return minDist;\n}\n\nvec3 colorFxn(vec3 col) {\n  return vec3(col / 255.0);\n}\n\nvoid main()\n{\n    fs_Pos = vs_Pos.xyz;\n    fs_Time = float(u_Time);\n\n    // terrain code from hw5\n    vec2 st = (vs_Pos.xz + 1.0) / 2.0;\n    float fbmn = fbm(st).x;\n    float worley = WorleyNoise(vs_Pos.xz, 0);\n    float worley2 = WorleyNoise(fbm(vs_Pos.zx), 0);\n\n    worley2 /= fbmn * 2.8;\n    worley2 += worley / 5.0;\n\n    fbmn = clamp(fbmn, 0.0, 1.0);\n\n    worley2 = 1.0 - worley2;\n    worley2 = clamp(worley2, 0.0, 1.0);\n    \n    vec4 modelposition = vec4(0.0, 0.0, 0.0, 1.0);\n    if (worley2 < 0.3) {\n      // water\n      modelposition = vec4(vs_Pos.x, 0.0, vs_Pos.z, 1.0);\n      fs_Water = 1.0;\n    }\n    else if (worley2 < 0.5) {\n      // slope\n      fs_Water = 0.5;\n      float diff = 0.5 - worley2; // 0.0 to 0.2\n      modelposition = vec4(vs_Pos.x, 0.5 - (diff/0.5), vs_Pos.z, 1.0);\n    }\n    else {\n      // land\n      modelposition = vec4(vs_Pos.x, 0.5, vs_Pos.z, 1.0);\n      fs_Water = 0.0;\n    }\n    modelposition = u_Model * modelposition;\n    gl_Position = u_ViewProj * modelposition;\n}\n"
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_gl_matrix__ = __webpack_require__(1);
+
+class NoiseFxns {
+    constructor(pos) {
+        this.fs_Pos = pos;
+    }
+    random1(p, seed) {
+        let a = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["c" /* vec3 */].create();
+        a = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["c" /* vec3 */].add(a, p, seed);
+        let b = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["c" /* vec3 */].fromValues(987.654, 123.456, 531.975);
+        let val = Math.sin(__WEBPACK_IMPORTED_MODULE_0_gl_matrix__["c" /* vec3 */].dot(a, b)) * 85734.3545;
+        return val - Math.floor(val);
+    }
+    random2(p, seed) {
+        let a = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].create();
+        a = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].add(a, p, seed);
+        let b = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(311.7, 127.1);
+        let d = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(269.5, 183.3);
+        let c = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(__WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].dot(a, b), __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].dot(a, d));
+        let e = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(Math.sin(c[0]) * 85734.3545, Math.sin(c[1]) * 85734.3545);
+        let f = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(e[0] - Math.floor(e[0]), e[1] - Math.floor(e[1]));
+        return f;
+    }
+    //Smoothstep (Adam's code)
+    mySmoothStep(a, b, t) {
+        t = Math.min(Math.max((t - 0.0) / (1.0 - 0.0), 0.0), 1.0);
+        t = t * t * (3.0 - 2.0 * t);
+        let c = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(a[0] * (1.0 - t) + b[0] * t, a[1] * (1.0 - t) + b[1] * t);
+        return c;
+    }
+    //2d Noise (Adam's code)
+    interpNoise2D(uv) {
+        let uvFract = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(uv[0] - Math.floor(uv[0]), uv[1] - Math.floor(uv[1]));
+        let flooruv = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(Math.floor(uv[0]), Math.floor(uv[1]));
+        let ten = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(10.0, 10.0);
+        let ll = this.random2(flooruv, ten); //need to input seeds
+        let temp = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].create();
+        __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].add(temp, flooruv, __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(1, 0));
+        let temp2 = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].create();
+        __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].add(temp2, flooruv, __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(0, 1));
+        let temp3 = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].create();
+        __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].add(temp3, flooruv, __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(1, 1));
+        let lr = this.random2(temp, ten);
+        let ul = this.random2(temp2, ten);
+        let ur = this.random2(temp3, ten);
+        let lerpXL = this.mySmoothStep(ll, lr, uvFract[0]);
+        let lerpXU = this.mySmoothStep(ul, ur, uvFract[0]);
+        return this.mySmoothStep(lerpXL, lerpXU, uvFract[1]);
+    }
+    //FBM (Adam's base code)
+    fbm(uv) {
+        let amp = 20.0;
+        let freq = 1.0;
+        let sum = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(0.0, 0.0);
+        let maxSum = 0.0;
+        let octaves = 10; //can modify
+        for (let i = 0; i < octaves; i++) {
+            let result = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(this.interpNoise2D(__WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(uv[0] * freq, uv[1] * freq))[0] * amp, this.interpNoise2D(__WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(uv[0] * freq, uv[1] * freq))[1] * amp);
+            __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].add(sum, sum, result);
+            maxSum += amp;
+            amp *= 0.5;
+            freq *= 2.0;
+        }
+        return __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(sum[0] / maxSum, sum[1] / maxSum);
+    }
+    //Worley Noise (Adam's code)
+    WorleyNoise(uv) {
+        // Tile the space
+        let uvInt = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(Math.floor(uv[0]), Math.floor(uv[1]));
+        let uvFract = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(uv[0] - uvInt[0], uv[1] - uvInt[1]);
+        let minDist = 1.0; // Minimum distance initialized to max.
+        // Search all neighboring cells and this cell for their point
+        for (let y = -1; y <= 1; y++) {
+            for (let x = -1; x <= 1; x++) {
+                let neighbor = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(x, y); // may not be floats?
+                // Random point inside current neighboring cell
+                let temp = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].create();
+                temp = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].add(temp, uvInt, neighbor);
+                let point = this.random2(temp, __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(10.0, 10.0));
+                // Compute the distance b/t the point and the fragment
+                // Store the min dist thus far
+                let diff = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].fromValues(neighbor[0] + point[0] - uvFract[0], neighbor[1] + point[1] - uvFract[1]);
+                let dist = __WEBPACK_IMPORTED_MODULE_0_gl_matrix__["b" /* vec2 */].length(diff);
+                minDist = Math.min(minDist, dist);
+            }
+        }
+        return minDist;
+    }
+}
+;
+/* harmony default export */ __webpack_exports__["a"] = (NoiseFxns);
+
 
 /***/ }),
 /* 71 */
 /***/ (function(module, exports) {
 
-module.exports = "#version 300 es\nprecision highp float;\n\nuniform vec2 u_PlanePos; // Our location in the virtual world displayed by the plane\n\nin vec3 fs_Pos;\nin vec4 fs_Nor;\nin vec4 fs_Col;\n\nin float fs_Time;\nin float fs_Water;\n\nvec3 colorFxn(vec3 col) {\n  return vec3(col / 255.0);\n}\n\nout vec4 out_Col; // This is the final output color that you will see on your\n                  // screen for the pixel that is currently being processed.\n\nvoid main()\n{\n    vec4 col_final = vec4(1.0);\n\n    vec3 col_w = colorFxn(vec3(143.0, 178.0, 216.0));\n    vec3 col_l = colorFxn(vec3(178.0, 222.0, 156.0));\n    \n    if (fs_Water == 1.0) {\n        col_final = vec4(col_w, 1.0);\n    }\n    else if (fs_Water == 0.5) {\n        col_final = vec4(mix(col_w, col_l, 0.5), 1.0);\n    }\n    else {\n        col_final = vec4(col_l, 1.0);\n    }\n\n    vec3 col_a = colorFxn(vec3(100.0, 100.0, 100.0));\n\n    out_Col = col_final;\n}\n"
+module.exports = "#version 300 es\n\n\nuniform mat4 u_Model;\nuniform mat4 u_ModelInvTr;\nuniform mat4 u_ViewProj;\nuniform vec2 u_PlanePos; // Our location in the virtual world displayed by the plane\nuniform int u_Time;\nuniform int u_Anim;\n\nin vec4 vs_Pos;\nin vec4 vs_Nor;\nin vec4 vs_Col;\n\nin vec4 vs_Transf1;\nin vec4 vs_Transf2;\nin vec4 vs_Transf3;\nin vec4 vs_Transf4;\n\nout vec3 fs_Pos;\nout vec4 fs_Nor;\nout vec4 fs_Col;\n\nout float fs_Time;\nout float fs_Water;\n\nfloat random1( vec2 p , vec2 seed) {\n  return fract(sin(dot(p + seed, vec2(127.1, 311.7))) * 43758.5453);\n}\n\nfloat random1( vec3 p , vec3 seed) {\n  return fract(sin(dot(p + seed, vec3(987.654, 123.456, 531.975))) * 85734.3545);\n}\n\nvec2 random2( vec2 p , vec2 seed) {\n  return fract(sin(vec2(dot(p + seed, vec2(311.7, 127.1)), dot(p + seed, vec2(269.5, 183.3)))) * 85734.3545);\n}\n\n//Smoothstep (Adam's code)\nvec2 mySmoothStep(vec2 a, vec2 b, float t) {\n    t = smoothstep(0.0, 1.0, t);\n    return mix(a, b, t);\n}\n\n//2d Noise (Adam's code)\nvec2 interpNoise2D(vec2 uv) {\n    vec2 uvFract = fract(uv);\n    vec2 ll = random2(floor(uv), vec2(10.0)); //need to input seeds\n    vec2 lr = random2(floor(uv) + vec2(1,0), vec2(10.0));\n    vec2 ul = random2(floor(uv) + vec2(0,1), vec2(10.0));\n    vec2 ur = random2(floor(uv) + vec2(1,1), vec2(10.0));\n\n    vec2 lerpXL = mySmoothStep(ll, lr, uvFract.x);\n    vec2 lerpXU = mySmoothStep(ul, ur, uvFract.x);\n\n    return mySmoothStep(lerpXL, lerpXU, uvFract.y);\n}\n\n//FBM (Adam's base code)\nvec2 fbm(vec2 uv) {\n    float amp = 20.0;\n    float freq = 1.0;\n    vec2 sum = vec2(0.0);\n    float maxSum = 0.0;\n    int octaves = 10; //can modify\n    for(int i = 0; i < octaves; i++) {\n        sum += interpNoise2D(uv * freq) * amp;\n        maxSum += amp;\n        amp *= 0.5;\n        freq *= 2.0;\n    }\n    return sum / maxSum;\n}\n\n//Worley Noise (Adam's code)\nfloat WorleyNoise(vec2 uv, int j)\n{\n    // Tile the space\n    vec2 uvInt = floor(uv);\n    vec2 uvFract = fract(uv);\n\n    float minDist = 1.0; // Minimum distance initialized to max.\n\n    // Search all neighboring cells and this cell for their point\n    for(int y = -1; y <= 1; y++) {\n        for(int x = -1; x <= 1; x++) {\n            vec2 neighbor = vec2(float(x), float(y));\n\n            // Random point inside current neighboring cell\n            vec2 point = random2(uvInt + neighbor, vec2(10.0));\n\n            // Compute the distance b/t the point and the fragment\n            // Store the min dist thus far\n            vec2 diff = neighbor + point - uvFract;\n            float dist = length(diff);\n            minDist = min(minDist, dist);\n        }\n    }\n    return minDist;\n}\n\nvec3 colorFxn(vec3 col) {\n  return vec3(col / 255.0);\n}\n\nvoid main()\n{\n    fs_Pos = vs_Pos.xyz;\n    fs_Time = float(u_Time);\n\n    // terrain code from hw5\n    vec2 st = (vs_Pos.xz + 1.0) / 2.0;\n    float fbmn = fbm(st).x;\n    float worley = WorleyNoise(vs_Pos.xz, 0);\n    float worley2 = WorleyNoise(fbm(vs_Pos.zx), 0);\n\n    worley2 /= fbmn * 2.8;\n    worley2 += worley / 5.0;\n\n    fbmn = clamp(fbmn, 0.0, 1.0);\n\n    worley2 = 1.0 - worley2;\n    worley2 = clamp(worley2, 0.0, 1.0);\n    \n    vec4 modelposition = vec4(0.0, 0.0, 0.0, 1.0);\n    if (worley2 < 0.3) {\n      // water\n      modelposition = vec4(vs_Pos.x, 0.0, vs_Pos.z, 1.0);\n      fs_Water = 1.0;\n    }\n    else if (worley2 < 0.5) {\n      // slope\n      fs_Water = 0.5;\n      float diff = 0.5 - worley2; // 0.0 to 0.2\n      modelposition = vec4(vs_Pos.x, 0.5 - (diff/0.5), vs_Pos.z, 1.0);\n    }\n    else {\n      // land\n      modelposition = vec4(vs_Pos.x, 0.5, vs_Pos.z, 1.0);\n      fs_Water = 0.0;\n    }\n    modelposition = u_Model * modelposition;\n    gl_Position = u_ViewProj * modelposition;\n}\n"
 
 /***/ }),
 /* 72 */
 /***/ (function(module, exports) {
 
-module.exports = "#version 300 es\nprecision highp float;\n\n// The vertex shader used to render the background of the scene\n\nin vec4 vs_Pos;\n\nvoid main() {\n  gl_Position = vs_Pos;\n}\n"
+module.exports = "#version 300 es\nprecision highp float;\n\nuniform vec2 u_PlanePos; // Our location in the virtual world displayed by the plane\n\nin vec3 fs_Pos;\nin vec4 fs_Nor;\nin vec4 fs_Col;\n\nin float fs_Time;\nin float fs_Water;\n\nvec3 colorFxn(vec3 col) {\n  return vec3(col / 255.0);\n}\n\nout vec4 out_Col; // This is the final output color that you will see on your\n                  // screen for the pixel that is currently being processed.\n\nvoid main()\n{\n    vec4 col_final = vec4(1.0);\n\n    vec3 col_w = colorFxn(vec3(143.0, 178.0, 216.0));\n    vec3 col_l = colorFxn(vec3(178.0, 222.0, 156.0));\n    \n    if (fs_Water == 1.0) {\n        col_final = vec4(col_w, 1.0);\n    }\n    else if (fs_Water == 0.5) {\n        col_final = vec4(mix(col_w, col_l, 0.5), 1.0);\n    }\n    else {\n        col_final = vec4(col_l, 1.0);\n    }\n\n    vec3 col_a = colorFxn(vec3(100.0, 100.0, 100.0));\n\n    out_Col = col_final;\n}\n"
 
 /***/ }),
 /* 73 */
 /***/ (function(module, exports) {
 
-module.exports = "#version 300 es\nprecision highp float;\n\n// The fragment shader used to render the background of the scene\n// Modify this to make your background more interesting\n\nout vec4 out_Col;\n\nvoid main() {\n  out_Col = vec4(88.0 / 255.0, 91.0 / 255.0, 196.0 / 255.0, 1.0);\n  //out_Col = vec4(164.0 / 255.0, 233.0 / 255.0, 1.0, 1.0);\n}\n"
+module.exports = "#version 300 es\nprecision highp float;\n\n// The vertex shader used to render the background of the scene\n\nin vec4 vs_Pos;\n\nvoid main() {\n  gl_Position = vs_Pos;\n}\n"
 
 /***/ }),
 /* 74 */
 /***/ (function(module, exports) {
 
-module.exports = "#version 300 es\n\nuniform mat4 u_ViewProj;\nuniform float u_Time;\n\nuniform mat3 u_CameraAxes; // Used for rendering particles as billboards (quads that are always looking at the camera)\n// gl_Position = center + vs_Pos.x * camRight + vs_Pos.y * camUp;\n\nin vec4 vs_Pos; // Non-instanced; each particle is the same quad drawn in a different place\n// in vec4 vs_Nor; // Non-instanced, and presently unused\nin vec4 vs_Col; // An instanced rendering attribute; each particle instance has a different color\n// in vec2 vs_UV; // Non-instanced, and presently unused in main(). Feel free to use it for your meshes.\nin vec4 vs_Transf1;\nin vec4 vs_Transf2;\nin vec4 vs_Transf3;\nin vec4 vs_Transf4;\n\nout vec4 fs_Col;\nout vec4 fs_Pos;\nout vec4 fs_Nor;\n\nvoid main()\n{\n    fs_Col = vs_Col;\n    if (vs_Col == vec4(0.0, 0.0, 0.0, 1.0)) {\n        fs_Col = vec4(0.0, 0.0, 0.5, 1.0);\n    }\n    fs_Pos = vs_Pos;\n\n    mat4 transf = mat4((vs_Transf1),(vs_Transf2),(vs_Transf3),(vs_Transf4));\n    gl_Position = u_ViewProj * vs_Pos;\n    gl_Position = u_ViewProj * transf * vs_Pos;\n}\n"
+module.exports = "#version 300 es\nprecision highp float;\n\n// The fragment shader used to render the background of the scene\n// Modify this to make your background more interesting\n\nout vec4 out_Col;\n\nvoid main() {\n  out_Col = vec4(88.0 / 255.0, 91.0 / 255.0, 196.0 / 255.0, 1.0);\n  //out_Col = vec4(164.0 / 255.0, 233.0 / 255.0, 1.0, 1.0);\n}\n"
 
 /***/ }),
 /* 75 */
+/***/ (function(module, exports) {
+
+module.exports = "#version 300 es\n\nuniform mat4 u_ViewProj;\nuniform float u_Time;\n\nuniform mat3 u_CameraAxes; // Used for rendering particles as billboards (quads that are always looking at the camera)\n// gl_Position = center + vs_Pos.x * camRight + vs_Pos.y * camUp;\n\nin vec4 vs_Pos; // Non-instanced; each particle is the same quad drawn in a different place\n// in vec4 vs_Nor; // Non-instanced, and presently unused\nin vec4 vs_Col; // An instanced rendering attribute; each particle instance has a different color\n// in vec2 vs_UV; // Non-instanced, and presently unused in main(). Feel free to use it for your meshes.\nin vec4 vs_Transf1;\nin vec4 vs_Transf2;\nin vec4 vs_Transf3;\nin vec4 vs_Transf4;\n\nout vec4 fs_Col;\nout vec4 fs_Pos;\nout vec4 fs_Nor;\n\nvoid main()\n{\n    fs_Col = vs_Col;\n    if (vs_Col == vec4(0.0, 0.0, 0.0, 1.0)) {\n        fs_Col = vec4(0.0, 0.0, 0.5, 1.0);\n    }\n    fs_Pos = vs_Pos;\n\n    mat4 transf = mat4((vs_Transf1),(vs_Transf2),(vs_Transf3),(vs_Transf4));\n    gl_Position = u_ViewProj * vs_Pos;\n    gl_Position = u_ViewProj * transf * vs_Pos;\n}\n"
+
+/***/ }),
+/* 76 */
 /***/ (function(module, exports) {
 
 module.exports = "#version 300 es\nprecision highp float;\n\nin vec4 fs_Col;\nin vec4 fs_Pos;\n// in vec4 fs_Nor;\n\nout vec4 out_Col;\n\nvoid main()\n{\n    /*\n    float dist = 1.0 - (length(fs_Pos.xyz) * 2.0);\n\n    vec4 diffuseColor = vec4(fs_Col);\n\n    vec4 light = vec4(1.0, 5.0, 0.0, 0.0);\n    \n    // Calculate diffuse term for shading\n    float diffuseTerm = dot(normalize(vec3(fs_Nor)), normalize(vec3(light)));\n    // Avoid negative lighting values\n    diffuseTerm = clamp(diffuseTerm, 0.0, 1.0);\n    \n    float ambientTerm = 0.2;\n    float lightIntensity = diffuseTerm + ambientTerm;\n\n    vec4 lightCol = vec4(1.0, 196.0/255.0, 97.0/255.0, 1.0);\n    \n    // Compute final shaded color\n    out_Col = vec4(diffuseColor.rgb * lightIntensity * lightCol.rgb, diffuseColor.a);\n    */\n    out_Col = fs_Col;\n    //out_Col = vec4(1.0, 0.0, 0.0, 1.0);\n}\n"
