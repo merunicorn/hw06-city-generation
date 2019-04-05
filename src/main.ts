@@ -7,6 +7,7 @@ import OpenGLRenderer from './rendering/gl/OpenGLRenderer';
 import Camera from './Camera';
 import {setGL} from './globals';
 import ShaderProgram, {Shader} from './rendering/gl/ShaderProgram';
+import City from './city';
 
 // Define an object with application parameters and button callbacks
 // This will be referred to by dat.GUI's functions that add GUI elements.
@@ -19,6 +20,7 @@ const controls = {
 
 let square: Square;
 let plane : Plane;
+let grid : Square;
 let wPressed: boolean;
 let aPressed: boolean;
 let sPressed: boolean;
@@ -28,11 +30,34 @@ let gridBool: boolean = false;
 let animBool: boolean = false;
 let time: number = 0;
 
+let c: City;
+
 function loadScene() {
-  square = new Square(vec3.fromValues(0, 0, 0));
+  square = new Square();
   square.create();
   plane = new Plane(vec3.fromValues(0,0,0), vec2.fromValues(100,100), 20);
   plane.create();
+
+  grid = new Square();
+  
+  //grid = new Plane(vec3.fromValues(0,0.8,0), vec2.fromValues(1,1), 1);
+  grid.create();
+
+  c = new City(100, 100);
+
+  let cVBO: any = c.setVBO();
+  
+  let colors: Float32Array = new Float32Array(cVBO.colorsArray);
+  let transf1: Float32Array = new Float32Array(cVBO.transf1Array);
+  let transf2: Float32Array = new Float32Array(cVBO.transf2Array);
+  let transf3: Float32Array = new Float32Array(cVBO.transf3Array);
+  let transf4: Float32Array = new Float32Array(cVBO.transf4Array);
+
+  grid.setNumInstances(transf1.length / 4.0);
+  grid.setInstanceVBOs(colors, transf1, transf2, transf3, transf4);
+
+  console.log(transf4);
+  
 
   wPressed = false;
   aPressed = false;
@@ -120,6 +145,11 @@ function main() {
     new Shader(gl.FRAGMENT_SHADER, require('./shaders/flat-frag.glsl')),
   ]);
 
+  const instanced = new ShaderProgram([
+    new Shader(gl.VERTEX_SHADER, require('./shaders/inst-vert.glsl')),
+    new Shader(gl.FRAGMENT_SHADER, require('./shaders/inst-frag.glsl')),
+  ]);
+
   function processKeyPresses() {
     let velocity: vec2 = vec2.fromValues(0,0);
     if(wPressed) {
@@ -163,12 +193,17 @@ function main() {
       animBool = false;
     }
 
-    renderer.render(camera, lambert, [
-      plane], 
-      gridBool, time, animBool);
-    renderer.render(camera, flat, [
-      square],
-      gridBool, time, animBool);
+    
+    if (gridBool) {
+      renderer.irender(camera, instanced, [
+        grid],
+        true, time, animBool);
+    }
+    else {
+      renderer.render(camera, lambert, [
+        plane], 
+        false, time, animBool);
+    }
     stats.end();
 
     // Tell the browser to call `tick` again whenever it renders a new frame

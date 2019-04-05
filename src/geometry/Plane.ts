@@ -10,6 +10,12 @@ class Plane extends Drawable {
   scale: vec2;
   subdivs: number; // 2^subdivs is how many squares will compose the plane; must be even.
 
+  colors: Float32Array;
+  transf1: Float32Array; // Data for bufTransform1 (first column)
+  transf2: Float32Array;
+  transf3: Float32Array;
+  transf4: Float32Array;
+
   constructor(center: vec3, scale: vec2, subdivs: number) {
     super(); // Call the constructor of the super class. This is required.
     this.center = vec3.fromValues(center[0], center[1], center[2]);
@@ -57,6 +63,12 @@ class Plane extends Drawable {
     this.generateIdx();
     this.generatePos();
     this.generateNor();
+    this.generateCol();
+
+    this.generateTransform1();
+    this.generateTransform2();
+    this.generateTransform3();
+    this.generateTransform4();
 
     this.count = this.indices.length;
     gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, this.bufIdx);
@@ -69,6 +81,31 @@ class Plane extends Drawable {
     gl.bufferData(gl.ARRAY_BUFFER, this.positions, gl.STATIC_DRAW);
 
     console.log(`Created plane`);
+  }
+
+  setInstanceVBOs(colors: Float32Array,
+    transf1: Float32Array, transf2: Float32Array,
+    transf3: Float32Array, transf4: Float32Array) {
+    console.log("set vbo");
+    console.log("size of transf1: " + transf1.length);
+    this.colors = colors;
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufCol);
+    gl.bufferData(gl.ARRAY_BUFFER, this.colors, gl.STATIC_DRAW);
+
+    this.transf1 = transf1;
+    this.transf2 = transf2;
+    this.transf3 = transf3;
+    this.transf4 = transf4;
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufTransform1);
+    gl.bufferData(gl.ARRAY_BUFFER, this.transf1, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufTransform2);
+    gl.bufferData(gl.ARRAY_BUFFER, this.transf2, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufTransform3);
+    gl.bufferData(gl.ARRAY_BUFFER, this.transf3, gl.STATIC_DRAW);
+    gl.bindBuffer(gl.ARRAY_BUFFER, this.bufTransform4);
+    gl.bufferData(gl.ARRAY_BUFFER, this.transf4, gl.STATIC_DRAW);
   }
 };
 

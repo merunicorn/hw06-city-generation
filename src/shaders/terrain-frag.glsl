@@ -2,7 +2,6 @@
 precision highp float;
 
 uniform vec2 u_PlanePos; // Our location in the virtual world displayed by the plane
-uniform int u_Grid;
 
 in vec3 fs_Pos;
 in vec4 fs_Nor;
@@ -36,9 +35,6 @@ void main()
     }
 
     vec3 col_a = colorFxn(vec3(100.0, 100.0, 100.0));
-    if (u_Grid == 1) {
-        col_final = vec4(col_a, 1.0);
-    }
 
     out_Col = col_final;
 }

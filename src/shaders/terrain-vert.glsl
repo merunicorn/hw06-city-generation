@@ -12,6 +12,11 @@ in vec4 vs_Pos;
 in vec4 vs_Nor;
 in vec4 vs_Col;
 
+in vec4 vs_Transf1;
+in vec4 vs_Transf2;
+in vec4 vs_Transf3;
+in vec4 vs_Transf4;
+
 out vec3 fs_Pos;
 out vec4 fs_Nor;
 out vec4 fs_Col;
@@ -100,41 +105,40 @@ vec3 colorFxn(vec3 col) {
 
 void main()
 {
-  fs_Pos = vs_Pos.xyz;
+    fs_Pos = vs_Pos.xyz;
+    fs_Time = float(u_Time);
 
-  fs_Time = float(u_Time);
+    // terrain code from hw5
+    vec2 st = (vs_Pos.xz + 1.0) / 2.0;
+    float fbmn = fbm(st).x;
+    float worley = WorleyNoise(vs_Pos.xz, 0);
+    float worley2 = WorleyNoise(fbm(vs_Pos.zx), 0);
 
-  // terrain code from hw5
-  vec2 st = (vs_Pos.xz + 1.0) / 2.0;
-  float fbmn = fbm(st).x;
-  float worley = WorleyNoise(vs_Pos.xz, 0);
-  float worley2 = WorleyNoise(fbm(vs_Pos.zx), 0);
+    worley2 /= fbmn * 2.8;
+    worley2 += worley / 5.0;
 
-  worley2 /= fbmn * 2.8;
-  worley2 += worley / 5.0;
+    fbmn = clamp(fbmn, 0.0, 1.0);
 
-  fbmn = clamp(fbmn, 0.0, 1.0);
-
-  worley2 = 1.0 - worley2;
-  worley2 = clamp(worley2, 0.0, 1.0);
-  
-  vec4 modelposition = vec4(0.0, 0.0, 0.0, 1.0);
-  if (worley2 < 0.3) {
-    // water
-    modelposition = vec4(vs_Pos.x, 0.0, vs_Pos.z, 1.0);
-    fs_Water = 1.0;
-  }
-  else if (worley2 < 0.5) {
-    // slope
-    fs_Water = 0.5;
-    float diff = 0.5 - worley2; // 0.0 to 0.2
-    modelposition = vec4(vs_Pos.x, 0.5 - (diff/0.5), vs_Pos.z, 1.0);
-  }
-  else {
-    // land
-    modelposition = vec4(vs_Pos.x, 0.5, vs_Pos.z, 1.0);
-    fs_Water = 0.0;
-  }
-  modelposition = u_Model * modelposition;
-  gl_Position = u_ViewProj * modelposition;
+    worley2 = 1.0 - worley2;
+    worley2 = clamp(worley2, 0.0, 1.0);
+    
+    vec4 modelposition = vec4(0.0, 0.0, 0.0, 1.0);
+    if (worley2 < 0.3) {
+      // water
+      modelposition = vec4(vs_Pos.x, 0.0, vs_Pos.z, 1.0);
+      fs_Water = 1.0;
+    }
+    else if (worley2 < 0.5) {
+      // slope
+      fs_Water = 0.5;
+      float diff = 0.5 - worley2; // 0.0 to 0.2
+      modelposition = vec4(vs_Pos.x, 0.5 - (diff/0.5), vs_Pos.z, 1.0);
+    }
+    else {
+      // land
+      modelposition = vec4(vs_Pos.x, 0.5, vs_Pos.z, 1.0);
+      fs_Water = 0.0;
+    }
+    modelposition = u_Model * modelposition;
+    gl_Position = u_ViewProj * modelposition;
 }
