@@ -1,4 +1,5 @@
 import {vec2} from 'gl-matrix';
+import NoiseFxns from './noisefxns';
 
 class City {
     width : number;
@@ -10,6 +11,7 @@ class City {
         this.height = h;
         this.grid = [];
         this.initGrid();
+        this.waterCheck();
         this.scatterPoints();
     }
 
@@ -29,6 +31,27 @@ class City {
         }
     }
 
+    waterCheck() {
+        for (var i = 0; i < this.width; i++) {
+            for (var j = 0; j < this.width; j++) {
+                let p : vec2 = vec2.fromValues(i,j);
+                let st : vec2 = vec2.fromValues(p[0] + 1.0 / 2.0, p[1] + 1.0 /2.0);
+                let nf : NoiseFxns = new NoiseFxns(p);
+                let fbmn : number = nf.fbm(st)[0];
+                let worley : number = nf.WorleyNoise(p);
+                let worley2 : number = nf.WorleyNoise(vec2.fromValues(p[1],p[0]));
+                worley2 /= fbmn * 2.8;
+                worley2 += worley / 5.0;
+                worley2 = 1.0 - worley2;
+                worley2 = Math.min(Math.max(worley2, 0.0), 1.0);
+
+                if (worley2 < 0.3) {
+                    this.grid[i][j] = 4;
+                }
+            }
+        }        
+    }
+
     scatterPoints() {
         var numPoints = 50;
         for (var i = 0; i < numPoints; i++) {
@@ -38,8 +61,10 @@ class City {
             random1 *= this.height;
             random0 = Math.floor(random0);    
             random1 = Math.floor(random1);
-            if (random0 % 10 == 0 || random1 % 10 == 0) {
+            if (random0 % 10 == 0 || random1 % 10 == 0 ||
+                this.grid[random0][random1] == 4) {
                 // over road; generate new point
+                // or on water
                 i--;
             }
             else {
@@ -91,6 +116,13 @@ class City {
                         colArray.push(1);
                         colArray.push(0);
                         colArray.push(1);
+                        colArray.push(1);
+                    }
+                    else if (this.grid[i][j] == 4) {
+                        // water
+                        colArray.push(0);
+                        colArray.push(0);
+                        colArray.push(0);
                         colArray.push(1);
                     }
                     else {
