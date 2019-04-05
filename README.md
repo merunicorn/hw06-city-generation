@@ -13,10 +13,6 @@ Using instanced rendering as implemented in previous assignments, I rendered squ
 
 [![](grid.png)]
 
-For this assignment, you will generate a collection of 3D buildings within the road networks you created for the previous assignment.
-
-For this assignment, you will generate a network of roads to form the basis of a city using a modified version of L-systems. As in homework 4, you will be using instanced rendering to draw your road networks.
-
 ## Resources
 
 Previous HWs, which included Adam's noise function code, as found in provided ShaderToy demos.
